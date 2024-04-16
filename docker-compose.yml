@@ -1,0 +1,12 @@
+ 
+services:
+    node:
+        container_name: ${CONTAINER_NAME:-app}
+        build: .
+        tty: true
+        network_mode: "host"
+        ports:
+            - "5173:5173"
+            - "8080:8080"
+        volumes:
+            - ./app:/app
